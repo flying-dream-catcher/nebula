@@ -954,7 +954,6 @@
                 <p>Connect with us on social media</p>
             </div>
             <div class="social-links">
-                <a href="#" class="social-link">
                 </a>
                 <a href="#" class="social-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -963,7 +962,6 @@
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
                 </a>
-                <a href="#" class="social-link">
                 </a>
             </div>
             <div class="copyright">
