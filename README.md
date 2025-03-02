@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -71,9 +70,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 70% 20%, rgba(157, 78, 221, 0.1), transparent 40%),
-                        radial-gradient(circle at 20% 80%, rgba(83, 144, 217, 0.1), transparent 40%),
-                        radial-gradient(circle at 50% 50%, rgba(72, 191, 227, 0.05), transparent 60%);
+            background: radial-gradient(circle at 70% 20%, rgba(30, 27, 205, 0.516), transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(61, 54, 141, 0.427), transparent 40%),
+                        radial-gradient(circle at 50% 50%, rgba(222, 222, 222, 0.342), transparent 60%);
             z-index: -2;
             pointer-events: none;
         }
@@ -86,7 +85,7 @@
             width: 100%;
             z-index: 1000;
             padding: 1.5rem;
-            background: rgba(15, 15, 26, 0.8);
+            background: rgba(5, 5, 8, 0.8);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -129,7 +128,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -599,6 +598,7 @@
         .team-social {
             display: flex;
             justify-content: center;
+            gap: 1rem;
             position: relative;
             z-index: 1;
         }
@@ -623,10 +623,13 @@
             transform: translateY(-3px);
         }
 
+        /* Gallery Section */
+       
+
         /* Contact Section */
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
         }
 
@@ -690,6 +693,7 @@
 
         .contact-social {
             display: flex;
+            gap: 1rem;
             margin-top: 2rem;
         }
 
@@ -714,6 +718,67 @@
             transform: translateY(-5px);
         }
 
+        .contact-form {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px var(--neumorphic-shadow1), 
+                        -10px -10px 20px var(--neumorphic-shadow2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            background: var(--secondary-bg);
+            border: none;
+            color: var(--text-primary);
+            font-size: 1rem;
+            box-shadow: inset 4px 4px 8px var(--neumorphic-shadow1), 
+                        inset -4px -4px 8px var(--neumorphic-shadow2);
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            box-shadow: inset 6px 6px 12px var(--neumorphic-shadow1), 
+                        inset -6px -6px 12px var(--neumorphic-shadow2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--nebula-purple), var(--nebula-blue));
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 10px var(--neumorphic-shadow1);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 8px 8px 16px var(--neumorphic-shadow1);
+        }
+
         /* Footer */
         footer {
             background: var(--secondary-bg);
@@ -725,7 +790,7 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 3rem;
         }
 
@@ -829,6 +894,7 @@
 
         .footer-social {
             display: flex;
+            gap: 1rem;
         }
 
         .footer-social a {
@@ -904,7 +970,8 @@
         }
 
         @media (max-width: 992px) {
-            .about-content {
+            .about-content,
+            .contact-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -969,7 +1036,8 @@
                 justify-content: center;
             }
 
-            .events-container {
+            .events-container,
+            .gallery-container {
                 grid-template-columns: 1fr;
             }
 
@@ -1000,6 +1068,10 @@
             .section-title {
                 font-size: 1.8rem;
             }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -1020,11 +1092,11 @@
                 <div class="logo-text">NEBULA</div>
             </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero">首頁</a></li>
+                <li><a href="#about">關於</a></li>
+                <li><a href="#events">活動</a></li>
+                <li><a href="#team">成員</a></li>
+                <li><a href="#contact">聯係我們</a></li>
             </ul>
             <button class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
@@ -1037,14 +1109,14 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Welcome to Nebula Student Union</h1>
-                <p class="hero-subtitle">Expanding horizons, connecting minds, and creating cosmic opportunities</p>
+                <h1 class="hero-title">Wlecome to Nebula</h1>
+                <p class="hero-subtitle">聖公會基孝中學25-26學生會 1 號候選内閣</p>
                 <div class="hero-buttons">
                     <a href="#about" class="btn btn-primary">
-                        <i class="fas fa-meteor"></i> Discover Nebula
+                        <i class="fas fa-meteor"></i> 瞭解 Nebula
                     </a>
                     <a href="#events" class="btn btn-secondary">
-                        <i class="fas fa-calendar-alt"></i> Upcoming Events
+                        <i class="fas fa-calendar-alt"></i> 來年活動
                     </a>
                 </div>
             </div>
@@ -1055,12 +1127,12 @@
 
         <!-- About Section -->
         <section id="about" class="about">
-            <h2 class="section-title">About Nebula</h2>
+            <h2 class="section-title">關於 Nebula</h2>
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <p>Nebula Student Union is a vibrant community of passionate students dedicated to exploring the cosmos of knowledge and creating stellar opportunities for growth and connection.</p>
-                    <p>Founded in 2018, our union has been a celestial body of innovation, leadership, and collaboration. We believe in harnessing the collective energy of diverse minds to create a universe of possibilities for all students.</p>
-                    <p>Our mission is to support students in their academic journey, provide platforms for skill development, and foster a sense of belonging through various social and cultural initiatives.</p>
+                    <p>Nebula，意指星雲，象徵著孕育與創造的起點。在星雲中，氣體與塵埃逐漸聚集，最終大到足以形成光芒四射的恆星。這個名字承載著我們的期望——願學生會如同星雲一般，凝聚師生的力量，讓每一份力量、每一點光芒都能彙集成我們共同的校園願景，構築出一個充滿生機、和諧、溫暖的校園，讓每位同學都能在這片天地中閃耀出屬於自己的光芒。</p>
+                    <p>Nebula會以歷代學生會作借鑒，正所謂「擇其善者而從之，其不善者而改之。」使同學可享有更優質，更無微不至，更非同凡響的服務</p>
+                    <p>以學生為本，追求實事求是，保障學生利益，亦會設立意見箱，傾聽各位同學的意見，並為其發聲，成為我校與學生雙方溝通的橋樑，增強同學對我校的歸屬感。</p>
                 </div>
                 <div class="about-image fade-in">
                     <div class="about-card">
@@ -1070,23 +1142,23 @@
             </div>
             <div class="about-stats">
                 <div class="stat-card fade-in">
-                    <div class="stat-number">1200+</div>
-                    <div class="stat-label">Active Members</div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">位精英</div>
                 </div>
                 <div class="stat-card fade-in">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Annual Events</div>
+                    <div class="stat-number">688 B+</div>
+                    <div class="stat-label">腦細胞</div>
                 </div>
                 <div class="stat-card fade-in">
                     <div class="stat-number">15</div>
-                    <div class="stat-label">Partner Organizations</div>
+                    <div class="stat-label">來年活動</div>
                 </div>
             </div>
         </section>
 
         <!-- Events Section -->
         <section id="events" class="events">
-            <h2 class="section-title">Upcoming Events</h2>
+            <h2 class="section-title">來年活動</h2>
             <div class="events-container">
                 <div class="event-card fade-in">
                     <div class="event-image">
@@ -1101,7 +1173,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Main Auditorium</span>
                             </div>
-                            <button class="event-btn">Register</button>
+                          
                         </div>
                     </div>
                 </div>
@@ -1119,7 +1191,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Innovation Hub</span>
                             </div>
-                            <button class="event-btn">Register</button>
+                          
                         </div>
                     </div>
                 </div>
@@ -1137,7 +1209,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Campus Plaza</span>
                             </div>
-                            <button class="event-btn">Register</button>
+                          
                         </div>
                     </div>
                 </div>
@@ -1146,17 +1218,18 @@
 
         <!-- Team Section -->
         <section id="team" class="team">
-            <h2 class="section-title">Meet Our Team</h2>
+            <h2 class="section-title">團隊精英</h2>
             <div class="team-container">
                 <div class="team-card fade-in">
                     <div class="team-avatar">
                         <img src="https://picsum.photos/id/1027/300/300" alt="Sarah Johnson">
                     </div>
-                    <h3 class="team-name">Sarah Johnson</h3>
-                    <div class="team-role">President</div>
+                    <h3 class="team-name">丘莉欣</h3>
+                    <div class="team-role">主席</div>
                     <p class="team-bio">Astrophysics major with a passion for leadership and community building. Sarah has been instrumental in expanding Nebula's reach across campus.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -1164,11 +1237,12 @@
                     <div class="team-avatar">
                         <img src="https://picsum.photos/id/1012/300/300" alt="David Chen">
                     </div>
-                    <h3 class="team-name">David Chen</h3>
-                    <div class="team-role">Vice President</div>
+                    <h3 class="team-name">李逸塵</h3>
+                    <div class="team-role">外務副主席</div>
                     <p class="team-bio">Computer Science enthusiast and hackathon champion. David leads our tech initiatives and mentorship programs for first-year students.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -1176,11 +1250,12 @@
                     <div class="team-avatar">
                         <img src="https://picsum.photos/id/1000/300/300" alt="Aisha Patel">
                     </div>
-                    <h3 class="team-name">Aisha Patel</h3>
-                    <div class="team-role">Events Coordinator</div>
+                    <h3 class="team-name">黃俊天</h3>
+                    <div class="team-role">内務副主席</div>
                     <p class="team-bio">Business Administration major with exceptional organizational skills. Aisha ensures all our events run smoothly and create memorable experiences.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 
@@ -1188,23 +1263,78 @@
                     <div class="team-avatar">
                         <img src="https://picsum.photos/id/1074/300/300" alt="Miguel Rodriguez">
                     </div>
-                    <h3 class="team-name">Miguel Rodriguez</h3>
-                    <div class="team-role">Treasurer</div>
+                    <h3 class="team-name">陳敏琳</h3>
+                    <div class="team-role">秘書</div>
                     <p class="team-bio">Economics major with a keen eye for financial management. Miguel ensures our resources are allocated effectively to maximize impact.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in">
+                    <div class="team-avatar">
+                        <img src="https://picsum.photos/id/1000/300/300" alt="Aisha Patel">
+                    </div>
+                    <h3 class="team-name">何索妮</h3>
+                    <div class="team-role">財政</div>
+                    <p class="team-bio">Business Administration major with exceptional organizational skills. Aisha ensures all our events run smoothly and create memorable experiences.</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in">
+                    <div class="team-avatar">
+                        <img src="https://picsum.photos/id/1000/300/300" alt="Aisha Patel">
+                    </div>
+                    <h3 class="team-name">黎子僖</h3>
+                    <div class="team-role">宣傳</div>
+                    <p class="team-bio">Business Administration major with exceptional organizational skills. Aisha ensures all our events run smoothly and create memorable experiences.</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in">
+                    <div class="team-avatar">
+                        <img src="https://picsum.photos/id/1000/300/300" alt="Aisha Patel">
+                    </div>
+                    <h3 class="team-name">余綽霖</h3>
+                    <div class="team-role">康樂</div>
+                    <p class="team-bio">Business Administration major with exceptional organizational skills. Aisha ensures all our events run smoothly and create memorable experiences.</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in">
+                    <div class="team-avatar">
+                        <img src="https://picsum.photos/id/1000/300/300" alt="Aisha Patel">
+                    </div>
+                    <h3 class="team-name">梁程</h3>
+                    <div class="team-role">福利</div>
+                    <p class="team-bio">Business Administration major with exceptional organizational skills. Aisha ensures all our events run smoothly and create memorable experiences.</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Gallery Section -->
+        
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-container">
                 <div class="contact-info fade-in">
-                    <h3>Connect With Us</h3>
-                    <p>Have questions or want to get involved? Reach out to us through any of the channels below. We'd love to hear from you!</p>
+                    <h3>聯係我們</h3>
+                    <p>有任何疑問嗎？透過以下任何渠道聯絡我們或填寫表格。我們很高興收到您的來信！</p>
                     
                     <div class="contact-method">
                         <div class="contact-icon">
@@ -1212,7 +1342,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Location</h4>
-                            <p>Student Union Building, Room 301<br>University Campus, Cityville</p>
+                            <p>SKH Kei Hau Secondary School<br>5 Kai Tin Rd, Lam Tin</p>
                         </div>
                     </div>
                     
@@ -1232,23 +1362,35 @@
                         </div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            <a href="tel:+1234567890">(123) 456-7890</a>
+                            <a href="tel:+85223460252">(852) 2346 0252</a>
                         </div>
                     </div>
                     
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Hours</h4>
-                            <p>Monday - Friday: 9am - 5pm<br>Saturday: 10am - 2pm</p>
-                        </div>
-                    </div>
+                    
                     
                     <div class="contact-social">
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -1258,43 +1400,41 @@
     <footer>
         <div class="footer-content">
             <div class="footer-col">
-                <h4>About Nebula</h4>
-                <p>Nebula Student Union is dedicated to enhancing the university experience through community building, skill development, and meaningful connections.</p>
+                <h4>Nebula</h4>
+                <p>秉承著「Nebula」的信念，在未來的一年裡，帶領大家勇敢面對挑戰，攜手跨越重重難關。我們不僅會真誠聆聽每一位同學的聲音，虛心接受各方意見，還將恪盡職守，以滿腔熱忱，全心全意地為大家服務。成為全校師生最堅實的依靠！
+                </p>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4>快速導航</h4>
                 <ul class="footer-links">
-                    <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                    <li><a href="#events"><i class="fas fa-chevron-right"></i> Events</a></li>
-                    <li><a href="#team"><i class="fas fa-chevron-right"></i> Our Team</a></li>
-                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="#hero"><i class="fas fa-chevron-right"></i> 主頁</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> 關於我們</a></li>
+                    <li><a href="#events"><i class="fas fa-chevron-right"></i> 活動</a></li>
+                    <li><a href="#team"><i class="fas fa-chevron-right"></i> 成員</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> 聯絡</a></li>
                 </ul>
             </div>
             
-            <div class="footer-col footer-newsletter">
-                <h4>Subscribe to Our Newsletter</h4>
-                <p>Stay updated with our latest events, opportunities, and announcements.</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
-                    <button type="submit" class="newsletter-btn">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+           
+            
             </div>
         </div>
         
         <div class="footer-bottom">
             <div class="copyright">
-                &copy; 2023 Nebula Student Union. All Rights Reserved.
+                &copy; 2025 Nebula Student Union. All Rights Reserved.
             </div>
+
             <div class="footer-links-bottom">
-                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                *我們並不代表聖公會基孝中學 如欲聯絡
+                <a href="http://www.keihau.edu.hk/">請點擊鏈接</a> 
             </div>
+           
         </div>
     </footer>
 
@@ -1394,15 +1534,18 @@
                 });
             });
             
-            // Newsletter form
-            const newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    alert('Thank you for subscribing to our newsletter!');
-                    newsletterForm.reset();
+                    // Form validation and submission logic would go here
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
                 });
             }
+            
+           
             
             // Smooth scrolling for all anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
